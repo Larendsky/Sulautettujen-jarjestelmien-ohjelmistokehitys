@@ -48,7 +48,7 @@ void button_0_handler(const struct device *dev, struct gpio_callback *cb, uint32
 }
 
 // Main program
-int main(void)
+int main(void) //tavoittelen 2 pistettä
 {
 
 	int ret = init_button();
