@@ -1,7 +1,4 @@
-// *****************************************************
-// This program shows how to use button 0 with interrupt
-// with nRF5340 Audio boards
-// Modified from the zephyr/button sample
+// tavoittelen 2 pistettä. "Liikennevalot" toimivat ja pause toimii.
 
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
