@@ -8,10 +8,10 @@
 #include <stdlib.h>
 #include <zephyr/timing/timing.h>
 
-// Laitteisto (Napit ja Ledit)
+// Napit ja Ledit
 #define BUTTON_0 DT_ALIAS(sw0)
 
-// Dynaaminen debug-lippu (Debugin asetus päälle/pois)
+// Debugin asetus päälle/pois
 bool debug_enabled = true; 
 
 static const struct gpio_dt_spec button_0 = GPIO_DT_SPEC_GET_OR(BUTTON_0, gpios, {0});
@@ -32,7 +32,7 @@ struct data_t {
     char msg[20];
 };
 
-// Valofifot ja synkronointi
+// Valofifot
 K_SEM_DEFINE(release_sem, 0, 1);
 K_FIFO_DEFINE(red_fifo);
 K_FIFO_DEFINE(yellow_fifo);
