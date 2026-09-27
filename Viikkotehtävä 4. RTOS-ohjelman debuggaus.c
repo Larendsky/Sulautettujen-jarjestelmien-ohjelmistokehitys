@@ -11,7 +11,7 @@
 // Laitteisto (Napit ja Ledit)
 #define BUTTON_0 DT_ALIAS(sw0)
 
-// Dynaaminen debug-lippu (Tehtävä +1p: Debugin asetus päälle/pois)
+// Dynaaminen debug-lippu (Debugin asetus päälle/pois)
 bool debug_enabled = true; 
 
 static const struct gpio_dt_spec button_0 = GPIO_DT_SPEC_GET_OR(BUTTON_0, gpios, {0});
