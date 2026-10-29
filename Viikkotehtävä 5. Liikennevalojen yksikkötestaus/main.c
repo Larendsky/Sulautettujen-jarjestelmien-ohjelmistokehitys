@@ -1,3 +1,4 @@
+//tavoittelen 2 pistettä Yksinkertaiset testit ja parseri sulautetussa ohjelmassa + 1p suoritus: Lisätään testikeissejä
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
 #include <zephyr/device.h>
