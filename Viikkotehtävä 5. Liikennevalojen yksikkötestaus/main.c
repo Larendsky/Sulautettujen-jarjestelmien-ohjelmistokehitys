@@ -132,8 +132,8 @@ static void uart_task(void *a, void *b, void *c) {
                         printk(">>> Debug-tulosteet: POIS <<<\n");
                     }
                 } 
-                // Parserin aikamerkkijono (6 merkkiä)
-                else if (uart_msg_cnt == 6 && strchr(uart_msg, ',') == NULL) {
+                // Parserin aikamerkkijono kaikki ilman pilkkua ohjataan parserille
+                else if (strchr(uart_msg, ',') == NULL) {
                     int seconds = time_parse(uart_msg);
                     
                     if (seconds >= 0) {
@@ -142,7 +142,14 @@ static void uart_task(void *a, void *b, void *c) {
                         }
                         k_timer_start(&parser_timer, K_SECONDS(seconds), K_NO_WAIT);
                     } else {
-                        printk("Virheellinen aikamerkkijono! Virhekoodi: %d\n", seconds);
+                        // Tulostetaan tarkka virhesyy
+                        printk("Virheellinen aikasyöte! ");
+                        switch(seconds) {
+                            case -1: printk("(Virhekoodi -1: Väärä pituus tai tyhjä)\n"); break;
+                            case -3: printk("(Virhekoodi -3: Aika-arvot rajojen ulkopuolella)\n"); break;
+                            case -4: printk("(Virhekoodi -4: Sisältää vääriä merkkejä)\n"); break;
+                            default: printk("(Virhekoodi: %d)\n", seconds);
+                        }
                     }
                 } 
                 // Normaali valokomento
