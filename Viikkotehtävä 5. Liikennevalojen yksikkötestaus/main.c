@@ -145,10 +145,14 @@ static void uart_task(void *a, void *b, void *c) {
                         // Tulostetaan tarkka virhesyy
                         printk("Virheellinen aikasyöte! ");
                         switch(seconds) {
-                            case -1: printk("(Virhekoodi -1: Väärä pituus tai tyhjä)\n"); break;
+                            switch(seconds) {
+                            case -1: printk("(Virhekoodi -1: Väärä pituus)\n"); break;
+                            case -2: printk("(Virhekoodi -2: Virheellinen taulukko / NULL)\n"); break;
                             case -3: printk("(Virhekoodi -3: Aika-arvot rajojen ulkopuolella)\n"); break;
-                            case -4: printk("(Virhekoodi -4: Sisältää vääriä merkkejä)\n"); break;
-                            default: printk("(Virhekoodi: %d)\n", seconds);
+                            case -4: printk("(Virhekoodi -4: Sisältää vääriä merkkejä, vain numerot sallittu)\n"); break;
+                            case -5: printk("(Virhekoodi -5: Aika on nolla sekuntia)\n"); break;
+                            default: printk("(Tuntematon virhekoodi: %d)\n", seconds);
+                        }
                         }
                     }
                 } 
