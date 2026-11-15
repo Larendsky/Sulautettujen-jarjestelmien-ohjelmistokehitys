@@ -1,4 +1,4 @@
-//tavoittelen 2 pistettä. Yksinkertaiset testit ja parseri sulautetussa ohjelmassa + 1p suoritus: Lisätään testikeissejä
+//tavoittelen 2 pistettä. Yksinkertaiset testit ja parseri sulautetussa ohjelmassa 1p + 1p lisätehtävä: Lisätään testikeissejä
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
 #include <zephyr/device.h>
