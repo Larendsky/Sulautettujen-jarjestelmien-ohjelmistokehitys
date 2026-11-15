@@ -145,7 +145,6 @@ static void uart_task(void *a, void *b, void *c) {
                         // Tulostetaan tarkka virhesyy
                         printk("Virheellinen aikasyöte! ");
                         switch(seconds) {
-                            switch(seconds) {
                             case -1: printk("(Virhekoodi -1: Väärä pituus)\n"); break;
                             case -2: printk("(Virhekoodi -2: Virheellinen taulukko / NULL)\n"); break;
                             case -3: printk("(Virhekoodi -3: Aika-arvot rajojen ulkopuolella)\n"); break;
